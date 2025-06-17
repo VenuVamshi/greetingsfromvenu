@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greetings from Venu</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .message {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #006400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Greetings from Venu 🎉</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Enter your name" required>
+        <button type="submit">Greet Me</button>
+    </form>
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+</body>
+</html>

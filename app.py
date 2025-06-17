@@ -4,15 +4,11 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def greet():
+    message = ""
     if request.method == "POST":
-        name = request.form["name"]
-        return f"<h2>Hi {name}, how are you?</h2>"
-    return '''
-        <form method="post">
-            Enter your name: <input type="text" name="name">
-            <input type="submit">
-        </form>
-    '''
+        username = request.form["username"]
+        message = f"Hi {username}! 🎂 Have a wonderful day! — from Venu 🎉"
+    return render_template("index.html", message=message)
 
 if __name__ == "__main__":
     app.run(debug=True)
